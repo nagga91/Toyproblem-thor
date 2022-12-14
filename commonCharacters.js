@@ -13,7 +13,17 @@
 
 
  var commonCharacters = function(string1, string2) {
-  
+   var ch=''
+   for(var i=0;i<string2.length;i++){
+       if(string1.includes(string2[i])){
+           ch+=string2[i]}
+   }
+   while(i<ch.length){
+      if(ch.includes(ch[i])){
+          ch.slice(i,1)}
+      i++
+  }
+   return ch
     }
     
     
