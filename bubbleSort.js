@@ -25,7 +25,9 @@
 // sorted array is being built up from the right side
 // quadratic (n^2) time complexity (essentially 2 for loops)
 
+
 var bubbleSort = function(array) {
+<<<<<<< HEAD
   var x;
    for(var i=0;i<array.length;i++){
     for(var j=0;j<array.length;j++){
@@ -36,6 +38,21 @@ var bubbleSort = function(array) {
     }
    }}
    return array
+=======
+  var sorted = false;
+  while (!sorted) {
+    sorted = true;
+    for (var i=0; i<array.length; i++) {
+      if (array[i] > array[i+1]) {
+        sorted = false;
+        var temp = array[i];
+        array[i] = array[i+1];
+        array[i+1] = temp;
+      }
+    }
+>>>>>>> 59fbe39ae30bd3d76251f9127c9a9f1f1f894c56
   }
-  
-  console.log(bubbleSort([4,3,2,1]));
+  return array;
+}
+
+console.log(bubbleSort([4,3,2,1]));
