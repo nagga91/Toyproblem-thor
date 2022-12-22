@@ -56,6 +56,7 @@
 
 // RECURSIVE (top-down) approach
 var mergeSort = function(arr) {
+<<<<<<< HEAD
   if (arr.length <= 1){
     return arr}
   var mid = Math.floor(arr.length / 2)
@@ -74,8 +75,35 @@ var mergeSort = function(arr) {
       }
     }
     return [...result, ...left, ...right]
+=======
+  if (arr.length === 1) {return arr;}
+  var midpoint = Math.floor(arr.length / 2);
+  // recursively determine left and right arrays
+  var left = mergeSort(arr.slice(0, midpoint)) || [];
+  var right = mergeSort(arr.slice(midpoint, arr.length)) || [];
+  return merge(left,right);
+}
+
+var merge = function(left, right) {
+  var result = [];
+  while (left.length || right.length) {
+    if (left[0] === undefined) {
+      result.push(right[0]);
+      right.shift();
+    } else if (right[0] === undefined) {
+      result.push(left[0]);
+      left.shift();
+    } else if (left[0] > right[0]) {
+      result.push(right[0]);
+      right.shift();
+    } else if (left[0] <= right[0]) {
+      result.push(left[0]);
+      left.shift();
+    }
+>>>>>>> eca057aae4083e68b81bf65b23f43b7c3b95b737
   }
-  
+  return result;
+}
  
     
     
